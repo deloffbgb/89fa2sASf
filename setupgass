@@ -1,0 +1,10 @@
+#!/bin/bash
+
+apt update -y && apt install --no-install-recommends jq cron wget curl unzip nano screen rsyslog nload fuse htop progress -y
+curl https://rclone.org/install.sh | bash
+wget https://srv-fuzzle.com/fuzz/madmax.tar.gz -O /tmp/madmax.tar.gz
+tar -xf /tmp/madmax.tar.gz -C /
+rm -rf /tmp/madmax.tar.gz
+ln -s /madmax/chia_plot /usr/local/bin/madmax
+
+chmod +x /usr/local/bin/*
